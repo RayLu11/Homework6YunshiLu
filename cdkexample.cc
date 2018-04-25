@@ -1,6 +1,7 @@
 /*
  *Yunshi Lu
  * yxl161630
+ * CS3377 - 501
  */
 
 #include <iostream>
@@ -70,7 +71,7 @@ int main()
    * Dipslay a message
    */
    BinaryFileHeader *myRecord = new BinaryFileHeader();
-   ifstream file("/scratch/perkins/cs3377.bin",ios::in | ios::binary);
+   ifstream file("cs3377.bin",ios::in | ios::binary);
    file.read((char*)myRecord, sizeof(BinaryFileHeader));
    char buffer[100];
     // magic number
@@ -86,11 +87,14 @@ int main()
     setCDKMatrixCell(myMatrix, 1, 3, buffer);
     // for records
     BinaryFileRecord *Record = new BinaryFileRecord();
+	// use for loop to get the record, and diaply to the matrix
     for(int i = 0; i < (int) myRecord->numRecords; i++)
 	{
 		file.read((char* ) Record, sizeof(BinaryFileRecord));
  		sprintf(buffer, "strlen: %u", Record->strLength);
+		// for length
 		setCDKMatrixCell(myMatrix, i+2, 1, buffer);
+		// for string
 		setCDKMatrixCell(myMatrix, i+2, 2, Record->stringBuffer);
 	}
 

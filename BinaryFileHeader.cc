@@ -1,8 +1,12 @@
+//Yunshi Lu
+// yxl161630
+// CS3377.501
 #include <iostream>
 #include <stdint.h>
 
 using namespace std;
 
+// header function
 class BinaryFileHeader
 {
 	public:

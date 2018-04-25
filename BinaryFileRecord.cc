@@ -1,3 +1,6 @@
+// Yunshi Lu
+// yxl161630
+// CS3377.501
 const int maxRecordStringLength = 25;
 #include <stdint.h>
 
